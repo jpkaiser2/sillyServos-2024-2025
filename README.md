@@ -8,7 +8,10 @@ GitHub repository created and maintained by Jacob Kaiserman
 <img src="https://jacobkaiserman.com/sillyServos-2023-2024/images/hpRobotics.png" width="30%" style="display:inline;">
 <img src="https://jacobkaiserman.com/sillyServos-2024-2025/images/ftcDeepLogo.png" width="20%" style="display:inline;">
 <br>
+<h1>How the Code Works</h1>
+<p>We will add this section later in the season when our code is complete.</p>
 <h1>Resources</h1>
+<p>Below you can find helpful sites, explanations, and a setup guide on GitHub.</p>
 <h2>Using Github</h2>
 <h3>What is GitHub?</h3>
 <p>Imagine GitHub as a digital workspace where you and others can collaborate on building things together. Think of it like a shared online notebook for writing code.</p>
@@ -34,6 +37,16 @@ GitHub repository created and maintained by Jacob Kaiserman
   <li>Saving your progress is a commit.</li>
   <li>Asking a friend to review your chapter is a pull request.</li>
 </ul>
+<h2>Setting up your Computer with GitHub Desktop & Android Studio</h2>
+<p>We use GitHub as our central code repository for the robot. This allows multiple team members to collaborate efficiently on the code. While GitHub can be used for basic editing, we primarily utilize an Integrated Development Environment (IDE) for code development. An IDE is a specialized software application that provides advanced features for writing, testing, and debugging code. Our team uses Android Studio, an IDE specifically designed for Java development, to create and refine our robot's software. Since Android Studio is a desktop application, it runs directly on your local computer and needs to be downloaded. To connect GitHub (on the web) to your IDE (locally on your computer), you will need to download GitHub Desktop. The GitHub desktop GUI is the easiest way to connect to GitHub. You can also use Git in the command line, but our team uses GitHub Desktop since it is easier for beginners.</p>
+<h3>Downloading GitHub Desktop & Creating a GitHub Account</h3>
+<p>You will need to create a GitHub account to contribute to this repository. Navigate to <a href="github.com">GitHub.com</a> and create a free account. Next, download <a href="https://github.com/apps/desktop">GitHub Desktop</a> and sign in to your newly created account. You now have GitHub all setup!</p>
+<h3>Cloning the GitHub Repository</h3>
+<p>To edit the repository in Android Studio, you need to have your own local copy of it. This is called "cloning" a repository. In GitHub Desktop, click on the upper left-hand corner where it says "current repository". Click on the "Add" button and select "clone repository" from the dropdown menu. Then, click the "URL" tab and enter <code>jpkaiser2/sillyServos-2024-2025</code>. Below that, choose a local path. This is where you will access the code files from your computer. Choose somewhere you will remember, such as your desktop. Click the "clone" button and you should be done!</p>
+<h3>Installing Android Studio and Opening the Cloned Repository</h3>
+<p>You will now need to download <a href="https://developer.android.com/studio">Android Studio</a>. Once it is installed, open the app and click on File>Open. You can then select the path of the cloned repository (from the previous step). The repository is now editable in Android Studio!</p>
+<h3>Editing the Code</h3>
+<p>You can edit the code in Android Studio. More information on the code structure can be found farther down on this page. Once you edit the code, you will need to push it to GitHub to publish your changes. If you haven't already, save your code in Android Studio with command+s (Mac) or ctrl+s (Windows & GNU/Linux). Navigate to GitHub Desktop and write a short summary of your code. It is a good idea to document your code, especially if you are working on it with others. Then, click "commit to main" to add your changes. Then click "push origin" to add it to GitHub. If you do not see the "push origin" button, that means someone else has made a change to the repository. Click on "pull origin" to get their changes and then click "push origin" to add your changes.</p>
 <h2>RoadRunner</h2>
 <ul>
   <li>RoadRunner drive constants explanation: <a href="https://learnroadrunner.com/drive-constants.html#drive-constants" target="_blank">https://learnroadrunner.com/drive-constants.html#drive-constants</a></li>
