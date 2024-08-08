@@ -1,5 +1,5 @@
 # Silly Servos 2024-2025
-Code repository for the Silly Servos Robotics Team #24213
+Code repository for the Silly Servos Robotics Team #24213 at Highland Park High School
 <br>
 2024-2025 FTC Into the Deep
 <br>
@@ -22,7 +22,7 @@ GitHub repository created and maintained by Jacob Kaiserman
   <li><a href="https://portfolios.hivemindrobotics.net/ftc">Example Portfolios</a></li>
   <li><a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController">FtcRobotController</a></li>
 </ul>
-<h2>Using Github</h2>
+<h2>Using GitHub</h2>
 <h3>What is GitHub?</h3>
 <p>Imagine GitHub as a digital workspace where you and others can collaborate on building things together. Think of it like a shared online notebook for writing code.</p>
 <h3>What can you do with GitHub?</h3>
@@ -57,9 +57,9 @@ GitHub repository created and maintained by Jacob Kaiserman
 <p>You will now need to download <a href="https://developer.android.com/studio">Android Studio</a>. Once it is installed, open the app and click on File>Open. You can then select the path of the cloned repository (from the previous step). The repository is now editable in Android Studio!</p>
 <h3>Editing the Code</h3>
 <p>You can edit the code in Android Studio. More information on the code structure can be found farther down on this page. Once you edit the code, you will need to push it to GitHub to publish your changes. If you haven't already, save your code in Android Studio with command+s (Mac) or ctrl+s (Windows & GNU/Linux). Navigate to GitHub Desktop and write a short summary of your code. It is a good idea to document your code, especially if you are working on it with others. Then, click "commit to main" to add your changes. Then click "push origin" to add it to GitHub. If you do not see the "push origin" button, that means someone else has made a change to the repository. Click on "pull origin" to get their changes and then click "push origin" to add your changes.</p>
-<h2>RoadRunner</h2>
+<h2>Road Runner</h2>
 <ul>
-  <li>RoadRunner drive constants explanation: <a href="https://learnroadrunner.com/drive-constants.html#drive-constants" target="_blank">https://learnroadrunner.com/drive-constants.html#drive-constants</a></li>
+  <li>Road Runner drive constants explanation: <a href="https://learnroadrunner.com/drive-constants.html#drive-constants" target="_blank">https://learnroadrunner.com/drive-constants.html#drive-constants</a></li>
 </ul>
 <h2>Mecanum Wheels & Driver-Controlled Period</h2>
 <ul>
