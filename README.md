@@ -12,6 +12,16 @@ GitHub repository created and maintained by Jacob Kaiserman
 <p>We will add this section later in the season when our code is complete.</p>
 <h1>Resources</h1>
 <p>Below you can find helpful sites, explanations, and a setup guide on GitHub.</p>
+<h2>Helpful Websites</h2>
+<ul>
+  <li><a href="https://gm0.org">Game Manual 0</a></li>
+  <li><a href="https://learnroadrunner.com/">Learn Road Runner</a></li>
+  <li><a href="https://www.firstinspires.org/sites/default/files/uploads/resource_library/ftc/onbot-java-guide.pdf">OnBot Java Guide: Electronics Setup to Programming</a></li>
+  <li><a href="https://raw.githubusercontent.com/alan412/LearnJavaForFTC/master/LearnJavaForFTC.pdf">Learn Java for FTC</a></li>
+  <li><a href="https://ftc-docs.firstinspires.org/en/latest/">FIRST Tech Challenge Documentation</a></li>
+  <li><a href="https://portfolios.hivemindrobotics.net/ftc">Example Portfolios</a></li>
+  <li><a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController">FtcRobotController</a></li>
+</ul>
 <h2>Using Github</h2>
 <h3>What is GitHub?</h3>
 <p>Imagine GitHub as a digital workspace where you and others can collaborate on building things together. Think of it like a shared online notebook for writing code.</p>
