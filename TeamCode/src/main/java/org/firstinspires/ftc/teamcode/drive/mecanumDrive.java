@@ -1,3 +1,6 @@
+// Do not use this file. It is inefficient. Use main.java instead.
+
+
 package org.firstinspires.ftc.teamcode.drive;
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
 import com.qualcomm.robotcore.*;
@@ -14,6 +17,8 @@ public class mecanumDrive extends LinearOpMode {
     // Instance Variables
     public LinearOpMode opMode = null; // Declare your opMode here
     public Hardware robot = new Hardware(opMode);
+
+    final double speedFactor = 0.5;
 
     // Main function
     @Override

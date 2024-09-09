@@ -37,15 +37,21 @@ public class Hardware {
         backLeft.setDirection(DcMotor.Direction.REVERSE);
     }
 
-    public void moveForward(){
-
+    public void moveForward(double power){
+        frontLeft.setPower(power);
+        frontRight.setPower(power);
+        backLeft.setPower(power);
+        backRight.setPower(power);
     }
 
-    public void moveBackward(){
-
+    public void moveBackward(double power){
+        frontLeft.setPower(-power);
+        frontRight.setPower(-power);
+        backLeft.setPower(-power);
+        backRight.setPower(-power);
     }
 
-    public void moveRight(){
+    public void moveRight(double power){
 
     }
 
