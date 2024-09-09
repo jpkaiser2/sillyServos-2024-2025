@@ -14,6 +14,7 @@ GitHub repository created and maintained by Jacob Kaiserman
 <p>Below you can find helpful sites, explanations, and a setup guide on GitHub.</p>
 <h2>Helpful Websites</h2>
 <ul>
+  <li><a href="https://ftc-resources.firstinspires.org/file/ftc/game/manual">Official FTC Game Manual</a></li>
   <li><a href="https://gm0.org">Game Manual 0</a></li>
   <li><a href="https://learnroadrunner.com/">Learn Road Runner</a></li>
   <li><a href="https://www.firstinspires.org/sites/default/files/uploads/resource_library/ftc/onbot-java-guide.pdf">OnBot Java Guide: Electronics Setup to Programming</a></li>
@@ -21,6 +22,8 @@ GitHub repository created and maintained by Jacob Kaiserman
   <li><a href="https://ftc-docs.firstinspires.org/en/latest/">FIRST Tech Challenge Documentation</a></li>
   <li><a href="https://portfolios.hivemindrobotics.net/ftc">Example Portfolios</a></li>
   <li><a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController">FtcRobotController</a></li>
+  <li><a href="https://www.w3schools.com/java/java_oop.asp">Object-Oriented Programming in Java (W3 Schools)</a></li>
+  <li><a href="https://www.reddit.com/r/ftc">FTC Subreddit</a></li>
 </ul>
 <h2>Using GitHub</h2>
 <h3>What is GitHub?</h3>
