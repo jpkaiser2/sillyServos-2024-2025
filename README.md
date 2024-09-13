@@ -5,6 +5,8 @@ Code repository for the Silly Servos Robotics Team #24213 at Highland Park High 
 <br>
 GitHub repository created and maintained by Jacob Kaiserman
 <br>
+<a href="https://github.com/jpkaiser2/SillyServosInProgress">Repository for in-progress code</a>
+<br>
 <img src="https://jacobkaiserman.com/sillyServos-2023-2024/images/hpRobotics.png" width="30%" style="display:inline;">
 <img src="https://jacobkaiserman.com/sillyServos-2024-2025/images/ftcDeepLogo.png" width="20%" style="display:inline;">
 <br>
