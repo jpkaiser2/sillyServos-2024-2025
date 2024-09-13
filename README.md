@@ -69,6 +69,8 @@ GitHub repository created and maintained by Jacob Kaiserman
 <h2>If You Have a Chromebook:</h2>
 <p>We use GitHub as our central code repository for the robot. This allows multiple team members to collaborate efficiently on the code. You will need to create a GitHub account to contribute to this repository. Navigate to <a href="https://www.github.com">GitHub.com</a> and create a free account. While GitHub can be used for basic editing, we primarily utilize an Integrated Development Environment (IDE) for code development. An IDE is a specialized software application that provides advanced features for writing, testing, and debugging code. Our team uses Android Studio to upload the code to the robot. However, it is not compatable with school-issued Chromebooks. To work around this, we can use GitHub Codespaces. A Codespace is a web-based IDE, which is perfect for Chromebooks since you don't have to download anything. First, go to the <a href="https://github.com/jpkaiser2/SillyServosInProgress">in-progress code repository</a>. This repository is used for writing and testing code. The other repository is used for the final code that will be uploaded to the robot only. Click on the green "Code" button and select the "Codespaces" tab. Click the "+" button to create a new Codespace. You Should now be able to view and edit the Code!</p>
 
+<img src="https://jacobkaiserman.com/sillyServos-2024-2025/images/codespaces.gif" >
+
 <h2>Road Runner</h2>
 <ul>
 
