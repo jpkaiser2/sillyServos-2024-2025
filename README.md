@@ -71,7 +71,7 @@ GitHub repository created and maintained by Jacob Kaiserman
 <img src="https://jacobkaiserman.com/sillyServos-2024-2025/images/codespaces.gif">
 <h3>Commiting Code on Codespaces</h3>
 <p>On GitHub Codespaces, it is easy to commit your code to the repository. First, click on the source control tab. Then, write a short summary of what you did and click commit. It will then prompt you to select if you want to commit. Click on "yes" (or "Save All & Commit Changes" if you haven't saved). Next, click on "Sync Changes" and select "OK". Your commit should be on the repository now. Since this can be confusing at first, see the gif of the process below.</p>
-<img src="https://jacobkaiserman.com/sillyServos-2024-2025/images/codespacesCommit.gif" >
+<img src="https://jacobkaiserman.com/sillyServos-2024-2025/images/codespacesCommit.gif">
 
 <h2>Road Runner</h2>
 <ul>
