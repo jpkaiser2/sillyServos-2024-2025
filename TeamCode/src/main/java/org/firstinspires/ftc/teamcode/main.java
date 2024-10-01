@@ -15,8 +15,6 @@ public class main extends LinearOpMode {
     private DcMotor backLeft;
     private DcMotor frontRight;
     private DcMotor backRight;
-    private DcMotor hanger;
-    private Servo drone;
 
     @Override
     public void runOpMode() throws InterruptedException { //if broken delete throws
@@ -34,11 +32,11 @@ public class main extends LinearOpMode {
         backLeft = hardwareMap.get(DcMotor.class, "backLeft");
         frontRight = hardwareMap.get(DcMotor.class, "frontRight");
         backRight = hardwareMap.get(DcMotor.class, "backRight");
-        hanger = hardwareMap.get(DcMotor.class, "hanger");
-        drone = hardwareMap.get(Servo.class, "drone");
+        //hanger = hardwareMap.get(DcMotor.class, "hanger");
+        //drone = hardwareMap.get(Servo.class, "drone");
 
-        drone = hardwareMap.get(Servo.class, "drone");
-        drone.setDirection(Servo.Direction.REVERSE);
+        //drone = hardwareMap.get(Servo.class, "drone");
+        //drone.setDirection(Servo.Direction.REVERSE);
 
         //reverse direction of motors since diagonal axles are reversed
         frontLeft.setDirection(DcMotor.Direction.REVERSE);
@@ -53,7 +51,7 @@ public class main extends LinearOpMode {
             frontRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
             backRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
             //arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-            drone.setPosition(1);
+            //drone.setPosition(1);
 
 
             while (opModeIsActive()) {
@@ -91,25 +89,6 @@ public class main extends LinearOpMode {
                 bl = y - x + clockwise;
                 br = y + x - clockwise;
 
-                if(gamepad1.a){
-                    hanger.setPower(1);
-                }
-                else if(gamepad1.b){
-                    hanger.setPower(-1);
-                }
-                else{
-                    hanger.setPower(0);
-                }
-
-                if(gamepad1.right_bumper){
-                    drone.setPosition(0.5);
-
-                }
-                if(gamepad1.left_bumper){
-                    drone.setPosition(1);
-
-                }
-
                     speed = 0.5;
                     fl /= speed;
                     fr /= speed;
@@ -122,8 +101,6 @@ public class main extends LinearOpMode {
                     telemetry.addData("BLP", bl);
                     telemetry.addData("BRP", br);
                     telemetry.addData("Clockwise", clockwise);
-                    telemetry.addData("Arm-L", gamepad1.left_trigger);
-                    telemetry.addData("Arm-R", gamepad1.right_trigger);
 
                     frontLeft.setPower(fl);
                     frontRight.setPower(fr);
