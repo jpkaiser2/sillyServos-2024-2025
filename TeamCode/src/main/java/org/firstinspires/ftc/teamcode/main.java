@@ -1,114 +1,50 @@
 package org.firstinspires.ftc.teamcode;
 
-import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
-
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import com.qualcomm.robotcore.hardware.Servo;
-//Created by Jacob Kaiserman
+
 @TeleOp
 public class main extends LinearOpMode {
-    private DcMotor frontLeft;
-    private DcMotor backLeft;
-    private DcMotor frontRight;
-    private DcMotor backRight;
-
     @Override
-    public void runOpMode() throws InterruptedException { //if broken delete throws
-        float x;
-        float y;
-        float clockwise;
-        double fl;
-        double fr;
-        double bl;
-        double br;
-        double speed = 1;
+    public void runOpMode() throws InterruptedException {
+        // Declare our motors
+        // Make sure your ID's match your configuration
+        DcMotor frontLeftMotor = hardwareMap.dcMotor.get("frontLeft");
+        DcMotor backLeftMotor = hardwareMap.dcMotor.get("backLeft");
+        DcMotor frontRightMotor = hardwareMap.dcMotor.get("frontRight");
+        DcMotor backRightMotor = hardwareMap.dcMotor.get("backRight");
 
-        //maps hardware
-        frontLeft = hardwareMap.get(DcMotor.class, "frontLeft");
-        backLeft = hardwareMap.get(DcMotor.class, "backLeft");
-        frontRight = hardwareMap.get(DcMotor.class, "frontRight");
-        backRight = hardwareMap.get(DcMotor.class, "backRight");
-        //hanger = hardwareMap.get(DcMotor.class, "hanger");
-        //drone = hardwareMap.get(Servo.class, "drone");
-
-        //drone = hardwareMap.get(Servo.class, "drone");
-        //drone.setDirection(Servo.Direction.REVERSE);
-
-        //reverse direction of motors since diagonal axles are reversed
-        frontLeft.setDirection(DcMotor.Direction.REVERSE);
-        backLeft.setDirection(DcMotor.Direction.REVERSE);
-
+        // Reverse the right side motors. This may be wrong for your setup.
+        // If your robot moves backwards when commanded to go forwards,
+        // reverse the left side instead.
+        // See the note about this earlier on this page.
+        frontLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+        //backRightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
         waitForStart();
-        if (opModeIsActive()) {
-            //set motors to brake
-            frontLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-            backLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-            frontRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-            backRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-            //arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-            //drone.setPosition(1);
 
+        if (isStopRequested()) return;
 
-            while (opModeIsActive()) {
-                //sets x & y axis of movement
-                x = gamepad1.left_stick_x;
-                y = -gamepad1.left_stick_y;
-                //sets rotation
-                clockwise = gamepad1.right_stick_x;
+        while (opModeIsActive()) {
+            double y = -gamepad1.left_stick_y; // Remember, Y stick value is reversed
+            double x = gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
+            double rx = gamepad1.right_stick_x;
 
+            // Denominator is the largest motor power (absolute value) or 1
+            // This ensures all the powers maintain the same ratio,
+            // but only if at least one is out of the range [-1, 1]
+            double denominator = Math.max(Math.abs(y) + Math.abs(x) + Math.abs(rx), 1);
+            double frontLeftPower = (y + x + rx) / denominator;
+            double backLeftPower = (y - x + rx) / denominator;
+            double frontRightPower = (y - x - rx) / denominator;
+            double backRightPower = (y + x - rx) / denominator;
 
-                telemetry.addData("A", gamepad1.dpad_up);
-                //y-axis movement
-                if (gamepad1.dpad_up) {
-                    y = (float) 1.0;
-                } else if (gamepad1.dpad_down) {
-                    y = (float) -1.0;
-                }
-
-                //x-axis movement
-                if (gamepad1.dpad_right) {
-                    x = (float) 1.0;
-                } else if (gamepad1.dpad_left) {
-                    x = (float) -1.0;
-                }
-
-                //rotation
-                if (gamepad1.back) {
-                    clockwise = (float) -1.0;
-                } else if (gamepad1.guide) {
-                    clockwise = (float) 1.0;
-                }
-                clockwise /= 2;
-                fl = y + x + clockwise;
-                fr = y - x - clockwise;
-                bl = y - x + clockwise;
-                br = y + x - clockwise;
-
-                    speed = 0.5;
-                    fl /= speed;
-                    fr /= speed;
-                    bl /= speed;
-                    br /= speed;
-
-                    telemetry.addData("SPEED", speed);
-                    telemetry.addData("FLP", fl);
-                    telemetry.addData("FRP", fr);
-                    telemetry.addData("BLP", bl);
-                    telemetry.addData("BRP", br);
-                    telemetry.addData("Clockwise", clockwise);
-
-                    frontLeft.setPower(fl);
-                    frontRight.setPower(fr);
-                    backLeft.setPower(bl);
-                    backRight.setPower(br);
-
-                    telemetry.update();
-                }
-            }
+            frontLeftMotor.setPower(frontLeftPower);
+            backLeftMotor.setPower(backLeftPower);
+            frontRightMotor.setPower(frontRightPower);
+            backRightMotor.setPower(backRightPower);
         }
     }
+}
