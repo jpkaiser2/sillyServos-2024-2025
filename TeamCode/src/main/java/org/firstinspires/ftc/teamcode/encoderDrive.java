@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 @Autonomous
@@ -16,10 +17,14 @@ public class encoderDrive extends LinearOpMode {
 
     private ElapsedTime runtime = new ElapsedTime();
 
-    static final double COUNTS_PER_MOTOR_REV = 1440; // eg: TETRIX Motor Encoder
+    // -----------------DO NOT CHANGE--------------
+    static final double COUNTS_PER_MOTOR_REV = 500;
     static final double DRIVE_GEAR_REDUCTION = 1.0; // No External Gearing.
     static final double WHEEL_DIAMETER_INCHES = 4.0; // For figuring circumference
     static final double COUNTS_PER_INCH = (COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) / (WHEEL_DIAMETER_INCHES * 3.1415);
+    // --------------------------------------------
+    
+
     static final double DRIVE_SPEED = 0.6;
     static final double TURN_SPEED = 0.5;
 
@@ -33,10 +38,10 @@ public class encoderDrive extends LinearOpMode {
         backRight = hardwareMap.get(DcMotor.class, "backRight");
 
         // Set motor directions for mecanum drive.
-        frontLeft.setDirection(DcMotor.Direction.REVERSE);  // Only front left is reversed.
-        frontRight.setDirection(DcMotor.Direction.FORWARD);
-        backLeft.setDirection(DcMotor.Direction.FORWARD);
-        backRight.setDirection(DcMotor.Direction.FORWARD);
+        frontLeft.setDirection(DcMotor.Direction.FORWARD);  // Only front left is reversed.
+        frontRight.setDirection(DcMotor.Direction.REVERSE);
+        backLeft.setDirection(DcMotor.Direction.REVERSE);
+        backRight.setDirection(DcMotor.Direction.REVERSE);
 
         // Reset and set motor modes.
         frontLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -68,16 +73,16 @@ public class encoderDrive extends LinearOpMode {
 
     public void movementSequence(){
         // Move forward
-        encoderDrive(DRIVE_SPEED, 48, 48, 48, 48, 5.0);  // All wheels forward
+        encoderDrive(DRIVE_SPEED, 24, 24, 24, 24, 5.0);  // All wheels forward
 
         // Strafe right
-        strafeDrive(DRIVE_SPEED, 24, 5.0);
+        //strafeDrive(DRIVE_SPEED, 12, 5.0);
 
         // Rotate clockwise
-        encoderDrive(TURN_SPEED, 12, -12, 12, -12, 4.0);  // Rotate right
+        //encoderDrive(TURN_SPEED, 12, -12, 12, -12, 4.0);  // Rotate right
 
         // Move backward
-        encoderDrive(DRIVE_SPEED, -24, -24, -24, -24, 4.0);  // All wheels backward
+        //encoderDrive(DRIVE_SPEED, -12, -12, -12, -12, 4.0);  // All wheels backward
     }
 
 
