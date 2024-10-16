@@ -6,6 +6,7 @@ Code repository for the Silly Servos Robotics Team #24213 at Highland Park High 
 GitHub repository created and maintained by Jacob Kaiserman
 <br>
 <a href="https://github.com/jpkaiser2/SillyServosInProgress">Repository for in-progress code</a>
+<a href="https://docs.google.com/document/d/15a6Kx4hhvg7xoEqnfevrWVvtjShQDiLi5pLFm73jV9Q/edit?usp=sharing">Autonomous Sequence Log</a>
 <br>
 <img src="https://jacobkaiserman.com/sillyServos-2023-2024/images/hpRobotics.png" width="30%" style="display:inline;">
 <img src="https://jacobkaiserman.com/sillyServos-2024-2025/images/ftcDeepLogo.png" width="20%" style="display:inline;">
