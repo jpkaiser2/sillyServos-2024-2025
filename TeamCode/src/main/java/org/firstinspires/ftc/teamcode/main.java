@@ -1,3 +1,5 @@
+//Created by Jacob Kaiserman
+//Silly Servos FTC Team #24213 - https://github.com/jpkaiser2/sillyServos-2024-2025
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
