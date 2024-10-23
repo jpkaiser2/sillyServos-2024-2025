@@ -23,7 +23,7 @@ public class encoderDrive extends LinearOpMode {
     static final double WHEEL_DIAMETER_INCHES = 4.0; // For figuring circumference
     static final double COUNTS_PER_INCH = (COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) / (WHEEL_DIAMETER_INCHES * 3.1415);
     // --------------------------------------------
-    
+
 
     static final double DRIVE_SPEED = 0.6;
     static final double TURN_SPEED = 0.5;
@@ -76,13 +76,13 @@ public class encoderDrive extends LinearOpMode {
         encoderDrive(DRIVE_SPEED, 24, 24, 24, 24, 5.0);  // All wheels forward
 
         // Strafe right
-        //strafeDrive(DRIVE_SPEED, 12, 5.0);
+        strafeDrive(DRIVE_SPEED, 12, 5.0);
 
         // Rotate clockwise
-        //encoderDrive(TURN_SPEED, 12, -12, 12, -12, 4.0);  // Rotate right
+        encoderDrive(TURN_SPEED, 12, -12, 12, -12, 4.0);  // Rotate right
 
         // Move backward
-        //encoderDrive(DRIVE_SPEED, -12, -12, -12, -12, 4.0);  // All wheels backward
+        encoderDrive(DRIVE_SPEED, -12, -12, -12, -12, 4.0);  // All wheels backward
     }
 
 
