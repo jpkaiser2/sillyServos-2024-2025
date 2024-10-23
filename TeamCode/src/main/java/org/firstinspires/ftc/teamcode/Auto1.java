@@ -73,7 +73,7 @@ public class Auto1 extends LinearOpMode {
 
     public void movementSequence(){
         // Strafe left
-        strafeDrive(DRIVE_SPEED, -10, 2.0);
+        strafeDrive(DRIVE_SPEED, -2, 2.0);
 
         // Move forward
         encoderDrive(DRIVE_SPEED, 41, 41, 41, 41, 5.0);  // All wheels forward
