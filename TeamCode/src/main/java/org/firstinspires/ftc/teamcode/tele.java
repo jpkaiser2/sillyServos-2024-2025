@@ -19,6 +19,8 @@ public class tele extends LinearOpMode {
     public DcMotor frontRightMotor = null;
     public DcMotor backRightMotor = null;
     public DcMotor armMotor = null;
+    public Servo claw1 = null;
+    public Servo claw2 = null;
 
     // Arm ticks per degree
     final double armTicksPerDegree = 28 * 250047.0 / 4913.0 * 100.0 / 20.0 * 1 / 360.0;
@@ -44,6 +46,10 @@ public class tele extends LinearOpMode {
         frontRightMotor = hardwareMap.dcMotor.get("frontRight");
         backRightMotor = hardwareMap.dcMotor.get("backRight");
         armMotor = hardwareMap.dcMotor.get("armMotor");
+
+        // Initialize claw servos
+        claw1 = hardwareMap.servo.get("claw1");
+        claw2 = hardwareMap.servo.get("claw2");
 
         // Reverse the left front motor
         frontLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
@@ -91,6 +97,18 @@ public class tele extends LinearOpMode {
             armPositionErrorFactor = errorFactor * (gamepad1.right_trigger - gamepad1.left_trigger);
             armMotor.setTargetPosition((int) (armPosition + armPositionErrorFactor));
             ((DcMotorEx) armMotor).setVelocity(2100);
+
+            // Control claw servos
+            if (gamepad1.x) {
+                // Open the claw: claw1 moves to 0.8, claw2 moves to 0.2
+                claw1.setPosition(0.8);
+                claw2.setPosition(0.2);
+            }
+            else if (gamepad1.a) {
+                // Close the claw: claw1 moves to 0.2, claw2 moves to 0.8
+                claw1.setPosition(0.2);
+                claw2.setPosition(0.8);
+            }
 
             // Check for current limit on arm motor and provide telemetry
             if (((DcMotorEx) armMotor).isOverCurrent()) {
