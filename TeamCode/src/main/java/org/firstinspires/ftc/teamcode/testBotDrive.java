@@ -17,7 +17,6 @@ public class testBotDrive extends LinearOpMode {
         DcMotor frontRightMotor = hardwareMap.dcMotor.get("frontRight");
         DcMotor backRightMotor = hardwareMap.dcMotor.get("backRight");
 
-
         // Reverse the left front motor.
         frontLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 

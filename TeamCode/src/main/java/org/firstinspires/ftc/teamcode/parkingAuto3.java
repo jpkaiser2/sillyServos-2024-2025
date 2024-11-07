@@ -37,11 +37,8 @@ public class parkingAuto3 extends LinearOpMode{
         backLeft = hardwareMap.get(DcMotor.class, "backLeft");
         backRight = hardwareMap.get(DcMotor.class, "backRight");
 
-        // Set motor directions for mecanum drive.
-        frontLeft.setDirection(DcMotor.Direction.FORWARD);  // Only front left is reversed.
-        frontRight.setDirection(DcMotor.Direction.REVERSE);
-        backLeft.setDirection(DcMotor.Direction.REVERSE);
-        backRight.setDirection(DcMotor.Direction.REVERSE);
+        // Reverse back left for correct mecanum movement
+        backLeft.setDirection(DcMotorSimple.Direction.REVERSE);
 
         // Reset and set motor modes.
         frontLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
