@@ -12,6 +12,19 @@ GitHub repository created and maintained by Jacob Kaiserman
 <img src="https://jacobkaiserman.com/sillyServos-2023-2024/images/hpRobotics.png" width="30%" style="display:inline;">
 <img src="https://jacobkaiserman.com/sillyServos-2024-2025/images/ftcDeepLogo.png" width="20%" style="display:inline;">
 <br>
+<h1>Robot Controls</h1>
+<img src="https://jacobkaiserman.com/sillyServos-2023-2024/controller.png">
+<p>Forward: left joystick (3) up</p>
+<p>Backward: left joystick (3) down</p>
+<p>Left: left joystick (3) left</p>
+<p>Right: left joystick (3) right</p>
+<p>Turn right: right joystick (4) right</p>
+<p>Turn left: right joystick (4) left</p>
+<p>Arm up: RB (2)</p>
+<p>Arm down: LB (1)</p>
+<p>Claw open: A (7)</p>
+<p>Claw close: X (8)</p>
+<h2>About the Code</h2>
 <h1>How the Code Works</h1>
 <p>We will add this section later in the season when our code is complete.</p>
 <h1>Resources</h1>
