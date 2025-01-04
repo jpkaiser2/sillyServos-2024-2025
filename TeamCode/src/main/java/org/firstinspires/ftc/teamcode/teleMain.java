@@ -19,8 +19,6 @@ public class teleMain extends LinearOpMode {
     public Servo claw1 = null;
     public Servo claw2 = null;
 
-    private int armTargetPosition = 0;
-
     @Override
     public void runOpMode() {
         // Motor Initialization
@@ -37,20 +35,22 @@ public class teleMain extends LinearOpMode {
         // Reverse back left for correct mecanum movement
         backLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
-        // Set arm motor behavior
-        armMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        // Arm motor setup
+        armMotor.setTargetPosition(0);
         armMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        armMotor.setTargetPosition(armTargetPosition);
         armMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        armMotor.setPower(1.0);
+        armMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         // Initialize claw positions
         claw1.setPosition(0);
         claw2.setPosition(0.8);
 
+        int armTargetPosition = 0;
+
         waitForStart();
 
         while (opModeIsActive()) {
+            // Drive control
             double y = -gamepad1.left_stick_y;  // Forward/backward
             double x = gamepad1.left_stick_x * 1.1;  // Strafing
             double rx = -gamepad1.right_stick_x;  // Rotation
@@ -66,58 +66,46 @@ public class teleMain extends LinearOpMode {
             frontRightMotor.setPower(frontRightPower);
             backRightMotor.setPower(backRightPower);
 
-            // Arm movement control
+            // Arm control
             if (gamepad1.right_bumper) {
-                moveArmUp();
-            } else if (gamepad1.left_bumper) {
-                moveArmDown();
-            } else {
-                stopArm();
+                armTargetPosition += 10; // Raise the arm
+            }
+            else if (gamepad1.left_bumper) {
+                armTargetPosition -= 10; // Lower the arm
+            }
+
+            if (gamepad1.dpad_up) {
+                // Collect sample position
+                armTargetPosition = 5200;
+            }
+            else if (gamepad1.dpad_right) {
+                // Score sample in low basket position
+                armTargetPosition = 3000;
+            }
+            else if (gamepad1.dpad_down) {
+                // Collapsed arm position
+                armTargetPosition = 0;
+            }
+            else if (gamepad1.dpad_left) {
+                // Clear barrier position
+                armTargetPosition = 4900;
+            }
+
+            // Only update target position if it has changed
+            if (armMotor.getTargetPosition() != armTargetPosition) {
+                armMotor.setTargetPosition(armTargetPosition);
+                armMotor.setPower(0.7);
             }
 
             // Claw control
             if (gamepad1.x) {
                 claw1.setPosition(0.4);
                 claw2.setPosition(0.2);
-            } else if (gamepad1.a) {
+            }
+            else if (gamepad1.a) {
                 claw1.setPosition(0.0);
                 claw2.setPosition(0.8);
             }
-
-            // Telemetry for debugging
-            telemetry.addData("Front Left Power", frontLeftPower);
-            telemetry.addData("Front Right Power", frontRightPower);
-            telemetry.addData("Back Left Power", backLeftPower);
-            telemetry.addData("Back Right Power", backRightPower);
-            telemetry.addData("Arm Target Position", armTargetPosition);
-            telemetry.addData("Arm Encoder", armMotor.getCurrentPosition());
-            telemetry.update();
         }
-    }
-
-    private void moveArmUp() {
-        armTargetPosition = 50;
-        armMotor.setTargetPosition(armTargetPosition);
-        armMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        armMotor.setPower(1.0);
-    }
-
-    private void moveArmDown() {
-        armTargetPosition = -50;
-        armMotor.setTargetPosition(armTargetPosition);
-        armMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        armMotor.setPower(1.0);
-    }
-
-    private void hover() {
-        armTargetPosition = 2;
-        armMotor.setTargetPosition(armTargetPosition);
-        armMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        armMotor.setPower(1.0);
-    }
-
-    private void stopArm() {
-        armMotor.setPower(0);
-        armMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
     }
 }

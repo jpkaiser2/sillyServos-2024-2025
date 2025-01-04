@@ -1,0 +1,4 @@
+org.firstinspires.ftc.teamcode.test.TeamCode-androidTest-0 /Users/Jacobkaiserman/Desktop/Robotics/sillyServos-2024-2025/TeamCode/build/generated/res/resValues/androidTest/debug
+org.firstinspires.ftc.teamcode.test.TeamCode-mergeDebugAndroidTestResources-1 /Users/Jacobkaiserman/Desktop/Robotics/sillyServos-2024-2025/TeamCode/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+org.firstinspires.ftc.teamcode.test.TeamCode-mergeDebugAndroidTestResources-2 /Users/Jacobkaiserman/Desktop/Robotics/sillyServos-2024-2025/TeamCode/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+org.firstinspires.ftc.teamcode.test.TeamCode-debugAndroidTest-3 /Users/Jacobkaiserman/Desktop/Robotics/sillyServos-2024-2025/TeamCode/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources

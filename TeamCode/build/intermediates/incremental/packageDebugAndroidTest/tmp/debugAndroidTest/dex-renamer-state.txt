@@ -1,0 +1,4 @@
+#Sat Jan 04 11:46:53 CST 2025
+base.0=/Users/Jacobkaiserman/Desktop/Robotics/sillyServos-2024-2025/TeamCode/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex
+path.0=0/classes.dex
+renamed.0=classes.dex
